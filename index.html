@@ -1,18 +1,9 @@
 ---
-　　layout: default
-　　title: 我的Blog
+layout: default
+title: Home
 ---
 
-　　<h2>{{ page.title }}</h2>
-
-　　<p>最新文章</p>
-
-　　<ul>
-
-　　　　{% for post in site.posts %}
-
-　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-
-　　　　{% endfor %}
-
-</ul>
+<div class="hero">
+  <img src="{{ site.baseurl }}{{ site.hero.image }}" />
+  <p>{{ site.hero.caption }}</p>
+</div>
