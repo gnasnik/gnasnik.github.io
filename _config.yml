@@ -26,7 +26,7 @@ version: 1.0.0
 author:
   name: Frank
   description: learning to be a giant.
-  gravatar: # # md5 hash of your email address
+  gravatar: 4c814f76f5ca82c084c49513ca5a63fd # md5 hash of your email address
   contact:
     # linkedin:  https://www.linkedin.com/in/lizhihao
     github:    https://github.com/frankffenn
