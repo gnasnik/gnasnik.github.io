@@ -1,63 +1,139 @@
-# Site Info
-title: Frank
-tagline: 'Life, tech, and everything'
-description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
-baseurl: ""
-url: http://frankffenn.github.io
-logo: '/public/logo.png'
+# Site settings
+title: Frank Blog
+SEOTitle: Frank的博客 | Frank Blog
+header-img: img/home-bg.jpg
+email: frankffenn@gmail.com
+description: "Life, tech, and everything."
+keyword: "Frank Blog, Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
+url: "http://frankffenn.github.io"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-# Site configurations
-gems:
-  - jekyll-paginate
+# Publish posts or collection documents with a future date.
+future: true
+
+# SNS settings
+RSS: false
+weibo_username:     gaxii
+# zhihu_username:     frankffenn
+github_username:    frankffenn
+#twitter_username:   
+#facebook_username:  
+#linkedin_username:  firstname-lastname-idxxxx
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+# If you have timezone issue (e.g. #68) in China, uncomment to use this:
+#timezone: CN  
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
+plugins: [jekyll-paginate]
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM
-excerpt_separator: "<!-- more -->"
-sass:
-  style: compressed
-  sass_dir: _scss    
-paginate: 5
-paginate_path: '/blog/page:num'
-permalink: pretty
+  input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
-version: 1.0.0
 
-# About/contact
-author:
-  name: Frank
-  description: learning to be a giant.
-  gravatar: 4c814f76f5ca82c084c49513ca5a63fd # md5 hash of your email address
-  contact:
-    # linkedin:  https://www.linkedin.com/in/lizhihao
-    github:    https://github.com/frankffenn
-    # facebook:  <hide>
-    # twitter:   https://twitter.com/Li_Zhihao
-    weibo:     http://weibo.com/gaxii
-    email:     frankffenn@gmail.com
 
-# Navigation (2nd level links supported)
-nav:
-  Home:           
-    - '/'
-  Blog:           
-    - '/blog/'
-    - { Categories: '/blog/categories/' }
-    - { Tags: '/blog/tags/' }
-  About:          
-    - '/about/'
-  Github Project: 
-    - 'http://frankffenn.github.io/'
+# Disqus settings
+# disqus_username: hux
 
-# Where are tags and categories displayed
-tag_page: '/blog/tags/'
-category_page: '/blog/categories/'
+# Netease settings
+# netease_comment: false
 
-hero:
-  image: /public/img/we_will_be_giants_by_yalestewart.jpg
-  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
+# Commenthub  settings
+commenthub_id: 22359882
 
-# Puglins
-mathjax: true # whether support mathjax
-google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
-disqus_short_name: 'your_short_name' # leave blank if you don't want disqus
 
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+# Google Analytics
+ga_track_id:             # Format: UA-xxxxxx-xx
+ga_domain:
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "For the next quantum leap<br>离开世界之前，一切都是过程"
+sidebar-avatar: /img/avatar-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+
+
+# Friends
+friends: [
+    {
+    #     title: "Su",
+    #     href: "http://su.gallery/"
+    # },{
+        title: "乱序",
+        href: "http://mida.re/"
+    },{
+        title: "Sherry Wu",
+        href: "https://xuechundesign.github.io"
+    },{
+        title: "Luke 的自留地",
+        href: "http://hmqk1995.github.io"
+    },{
+        title: "Ebn's Blog",
+        href: "http://ebnbin.com/"
+    },{
+        title: "SmdCn's Blog",
+        href: "http://blog.smdcn.net"
+    },{
+        title: "JiyinYiyong",
+        href: "http://tiye.me/"
+    },{
+        title: "David's Game",
+        href: "https://www.ruoyaowu.com/"
+    },{
+        title: "DHong Say",
+        href: "http://dhong.co"
+    },{
+        title: "尹峰以为",
+        href: "http://ingf.github.io/"
+    }
+]
