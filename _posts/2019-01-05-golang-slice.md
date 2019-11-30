@@ -293,4 +293,4 @@ func main() {
 ```
 
 为什么上面的 address2、address3、address4 地址是一样的? 不是说 append 每次都返回一个新的地址吗？
-这就是 golang 中赋值拷贝的原因啦，在 golang 中 slice 和 struct 的赋值是值拷贝，map 是引用拷贝, 所以  `s = append(s, 1)` 的时候， append 返回的是新的 slice ，但通过拷贝（值拷贝）后，s 还是原来的地址。
+这就是 golang 中赋值拷贝的原因啦，**在 golang 中 slice 和 struct 的赋值是值拷贝，map 是引用拷贝**, 所以  `s = append(s, 1)` 的时候， append 返回的是新的 slice ，但通过拷贝（值拷贝）后，s 还是原来的地址。
