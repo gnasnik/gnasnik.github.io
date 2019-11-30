@@ -251,3 +251,46 @@ func main() {
 
 因为 golang 中的参数传送都是值传递的，所以修改的并不是原来的 slice ，
 append 返回的也是新的 slice , 虽然 append 可以修改 slice 的底层数组，但是也要注意扩容的问题。
+
+
+再看下面打印的结果，跟你预想的一样吗？
+
+```
+package main
+
+import "fmt"
+
+func someChage(slice []int) {
+	fmt.Printf("addres2: %p\n", &slice)
+
+	slice = append(slice, 1, 2, 3)
+	fmt.Printf("addres3: %p\n", &slice)
+
+	slice = append(slice, 4, 5, 6)
+	fmt.Printf("addres4: %p\n", &slice)
+	fmt.Println(slice)
+}
+
+func main() {
+	slice := make([]int, 0)
+	fmt.Printf("addres1: %p\n", &slice)
+	someChage(slice)
+
+	fmt.Printf("addres5: %p\n", &slice)
+	fmt.Println(slice)
+}
+
+# 打印的结果：
+# addres1: 0xc000004480
+# addres2: 0xc0000044c0 
+# addres3: 0xc0000044c0
+# addres4: 0xc0000044c0
+# [1 2 3 4 5 6]
+# addres5: 0xc000004480
+# []
+#
+
+```
+
+为什么上面的 address2、address3、address4 地址是一样的? 不是说 append 每次都返回一个新的地址吗？
+这就是 golang 中赋值拷贝的原因啦，在 golang 中 slice 和 struct 的赋值是值拷贝，map 是引用拷贝, 所以  `s = append(s, 1)` 的时候， append 返回的是新的 slice ，但通过拷贝（值拷贝）后，s 还是原来的地址。
