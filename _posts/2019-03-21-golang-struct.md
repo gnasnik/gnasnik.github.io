@@ -2,7 +2,7 @@
 layout:     post
 title:      "避免 golang struct 的坑"
 subtitle:   ""
-date:       2019-03-021 14:00:00
+date:       2019-03-21 14:00:00
 author:     "frank"
 # header-style: text
 header-img: "img/post-bg-halting.jpg"
