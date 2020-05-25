@@ -8,7 +8,6 @@ author:     "frank"
 header-img: "img/post-bg-halting.jpg"
 tags:
     - golang
-	- mongodb
 ---
 
 
