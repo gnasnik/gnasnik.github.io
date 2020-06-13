@@ -55,8 +55,8 @@ const mongoURL = "mongodb://root:example@127.0.0.1:7017/center?authsource=admin"
 var Mongo *mongo.Client
 
 func Init() error {
-
-	Mongo, err := mongo.NewClient(option.Client().ApplyURI(mongoURL))
+	var err error 
+	Mongo, err = mongo.NewClient(option.Client().ApplyURI(mongoURL))
 	if err != nil {
 		return err
 	}
