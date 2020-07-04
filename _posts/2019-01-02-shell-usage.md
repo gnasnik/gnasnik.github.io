@@ -11,10 +11,16 @@ tags:
 
 # Shell 笔记
 
+在第一行指定执行的 shell 程序，如 `#! bin/bash` 或 `#！/bin/sh` 让系统知道用什么 shell 去执行脚本，如果没有指定，那么可以在命令行中用 shell 来执行
 
-`#！ 是告诉系统使用什么shell`
-`#！ /bin/bash 于 /bin/sh 通用，多用于实际`
+```
+    sh run.sh
+```
+  
+> #！ /bin/bash 于 /bin/sh 通用，多用于实际
 
+
+**语法**
 - 声明变量 name=lin 之间不能有空格
 - echo 标准打印
 - 使用变量 ${name}
