@@ -5,7 +5,7 @@ subtitle:   ""
 date:       2020-07-19 16:03:50
 author:     "frank"
 # header-style: text
-header-img: "img/golang.jpg"
+header-img: "img/golang.png"
 tags:
     - 编程
     - golang 
