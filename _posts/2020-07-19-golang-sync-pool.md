@@ -11,7 +11,9 @@ tags:
     - golang 
 ---
 
-# sync.Pool 的使用
+# sync.Pool 源码阅读
+
+[TOC]
 
 >  Pool's purpose is to cache allocated but unused items for later reuse,
 relieving pressure on the garbage collector. That is, it makes it easy to
