@@ -294,3 +294,33 @@ func main() {
 
 为什么上面的 address2、address3、address4 地址是一样的? 不是说 append 每次都返回一个新的地址吗？
 这就是 golang 中赋值拷贝的原因啦，**在 golang 中 slice 和 struct 的赋值是值拷贝，map 是引用拷贝**, 所以  `s = append(s, 1)` 的时候， append 返回的是新的 slice ，但通过拷贝（值拷贝）后，s 还是原来的地址。
+
+## 使用切片
+
+slice 的声明， 以 string 为例 :
+```
+var str []string  // 没有初始化同赋值， nil 值，底层指针是 nil
+var str []string{}  // 已初始化，空值,底层指针不为 nil， len(str) = 0
+var str = make([]string, len, cap) // 可根据 cap 预先分配底层数组长度
+```
+
+这里注意 **nil 是一个效的 slice, 并且 nil slice 可以直接使用，无需 make()创建**
+
+```
+var nums []int
+// nums := make([]int) 无需 make() 创建
+
+if add1 {
+  nums = append(nums, 1)
+}
+```
+
+对于数组和 slice ，除了使用声明，还可以使用`[begin:end:cap]` 来创建新的切片， 这里是**左闭右开区间**，底层数据共享。
+
+另外， string 类型也可以使用 `[:]` 来截取字符串，返回的还是一个 string类型。
+
+```
+a := "LOL"
+fmt.Println(a[1:]) // 输出 OL
+fmt.Println(a[1:2]) // 输出 O, 左闭右开
+```
